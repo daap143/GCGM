@@ -24,17 +24,14 @@ def take_url():
      if(repo == 0):
           take_url()
      else:
-          return repo
+          year = int(input("Enter the year: "))
+          option = int(input("Choose Graph Options:\n 1)Enter 1 for random commints \n 2)Enter 2 for Text Graph\n \nEneter(1 or 2): "))
+          if (option==1):
+              array = graph.random_commits(year)
+              git.commit(array,repo)
+          else:
+               txt = input("Enter The text you wanna display in the Graph:")
+               array = graph.text(txt,year)
+               git.commit(array,repo)
 
 take_url()
-#progress msg
-
-#input the msg/txt to show in the commit graph and year
-
-#graph function
-
-#git.commit
-
-#git.push
-
-#progress msg
