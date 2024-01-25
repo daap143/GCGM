@@ -29,5 +29,8 @@ def push(repo):
 
 #def extract
 def extract(repo_url):
-    repo = repo_url.rstrip('/').split('/')[-1].replace('.git', '')
-    return repo
+    if "/" in repo_url:
+        repo = repo_url.rstrip('/').split('/')[-1].replace('.git', '')
+        return repo
+    else:
+        return 0
